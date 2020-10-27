@@ -1,0 +1,31 @@
+{
+  "name": "bauhaus",
+  "version": "1.0.0",
+  "description": "the bauhaus theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marrquez/rsbauhaus.git"
+  },
+  "keywords": [
+    "rys",
+    "bauhaus"
+  ],
+  "author": "warrdnez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marrquez/rsbauhaus/issues"
+  },
+  "homepage": "https://github.com/Marrquez/rsbauhaus#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "gulp": "^4.0.2",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "node-sass": "^4.14.1"
+  }
+}
