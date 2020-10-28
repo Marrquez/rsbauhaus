@@ -1,1 +1,320 @@
-body {}
+/********************************/
+/*/  GENERAL STYLES
+/********************************/
+$white: #fff;
+
+$title-primary: #506A85;
+$text-primary: #73879C;
+
+$background: #F5F7FA;
+$background-primary: #F1BB31;
+$background-secondary: #1ABB9C;
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: $background;
+  // background-image: url(../images/image-background04.jpg);
+  width: 100%;
+  height: 100%;
+  color: $text-primary;
+
+  .layout-container, .dialog-off-canvas-main-canvas {
+    height: 100%;
+  }
+}
+
+.btn {
+  &-info {
+    background-color: $background-secondary;
+    border-radius: 0;
+    min-height: 35px;
+    line-height: 35px;
+  }
+}
+
+/********************************/
+/*/  LEFT SIDEBAR
+/********************************/
+#left-sidebar {
+  left: 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 50px;
+  background: rgba(47,64,82,1);
+  z-index: 1;
+
+  #block-bauhaus-branding {
+    display: none;
+  }
+
+  .logo {
+    text-align: center;
+    padding: 0;
+    width: 85px;
+
+    img {
+      height: 40px;
+      vertical-align: middle;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    min-height: 50px;
+
+    li {
+      text-align: center;
+      padding: 0;
+      cursor: pointer;
+      height: 50px;
+      line-height: 50px;
+      transition: background-color 0.5s ease;
+      width: 50px;
+      float: left;
+      margin: 0 5px;
+      position: relative;
+
+      a {
+        color: $white;
+        display: block;
+        font-size: .85em;
+        transition: background-color 0.5s ease;
+
+        &.is-active::before {
+          content: ' ';
+          border-bottom: 5px solid $background-primary;
+          position: absolute;
+          height: 3px;
+          width: 100%;
+          left: 0;
+        }
+
+        &:active {
+          transition: background-color 0.5s ease;
+        }
+      }
+
+      &:hover {
+        // background: #1ABB9C;
+        background: $background-primary;
+        transition: background-color 0.5s ease;
+
+        a {
+          color: $title-primary;
+          width: 100%;
+          display: block;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  #left-sidebar {
+    left: 6.5%;
+    width: 13%;
+    max-width: 205px;
+    min-width: 190px;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(47,64,82,1) 0%,rgba(47,64,82,0) 78%,rgba(47,64,82,0) 100%);
+
+    #block-bauhaus-branding {
+      display: block;
+    }
+
+    #block-bauhaus-main-menu {
+      ul li {
+        width: 100%;
+      }
+    }
+
+    .logo {
+      text-align: center;
+      padding: 42px 0 30px 0;
+      width: auto;
+
+      img {
+        display: block;
+        margin: 0 auto;
+        width: auto;
+        max-width: 90%;
+        height: auto;
+      }
+    }
+
+    ul {
+      height: auto;
+
+      li {
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 15px;
+        margin: 0;
+
+        a {
+          font-size: 1em;
+
+          &.is-active::before {
+            border-left: 5px solid $background-primary;
+            height: 100%;
+            width: 3px;
+          }
+        }
+      }
+    }
+  }
+}
+/********************************/
+/*/  MAIN CONTENT
+/********************************/
+#main-content {
+  display: block;
+  position: relative;
+  margin: 20px 5%;
+  overflow: visible;
+  min-height: 1px;
+  -webkit-transform: translate3d(0,0,0);
+  padding: 50px 0;
+
+  .main-content__home {
+    align-self: center;
+    overflow-y: scroll;
+    max-height: 80%;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+    }
+
+    .about {
+      .main-content__home-button {
+        display: none;
+      }
+
+      .main-content__about-imgs {
+        & > div {text-align: center;}
+        img {
+          margin: 10px;
+          border: 1px solid $text-primary;
+        }
+      }
+
+      .main-content__subtitle {
+        text-align: left;
+        color: $title-primary;
+      }
+
+      .main-content__conmitment {
+        text-align: left;
+        color: $text-primary;
+      }
+    }
+
+    &-title {
+      color: $title-primary;
+      text-align: center;
+      font-size: 2em;
+    }
+
+    &-body {
+      text-align: center;
+    }
+
+    &-button {
+      margin: 20px 0;
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #main-content {
+    margin: 0 3% 0 22%;
+    height: 100%;
+    padding: 0;
+
+    .main-content__home {
+      position: absolute;
+      bottom: 16%;
+      text-align: right;
+      right: 0;
+      float: right;
+      align-self: auto;
+
+      .main-content__home {
+        &-title {
+          font-size: 2.8em;
+          text-align: right;
+        }
+
+        &-body {
+          text-align: right;
+        }
+
+        &-button {
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #main-content {
+    margin: 0 6.5% 0 24.5%;
+  }
+}
+/********************************/
+/*/  FOOTER
+/********************************/
+#footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  background: $background;
+  height: 40px;
+  line-height: 40px;
+
+  .black-copyrights__powered {
+    color: $background-secondary;
+  }
+}
+
+@media (min-width: 768px) {
+  #footer {
+    left: 6.5%;
+    width: 13%;
+    max-width: 205px;
+    min-width: 190px;
+    bottom: 10px;
+    z-index: 2;
+
+    .black-copyrights__powered {
+      text-decoration: none;
+      color: $text-primary;
+      font-size: 12px;
+
+      &:hover {
+        color: $background-secondary;
+      }
+    }
+  }
+}

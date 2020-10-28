@@ -6,3 +6,15 @@
  *
  * Place your custom PHP code in this file.
  */
+function bauhaus_page_attachments_alter(&$page) {
+  $viewport = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'viewport',
+      'content' => 'width=device-width, initial-scale=1, shrink-to-fit=no',
+    ),
+  );
+
+  $page['#attached']['html_head'][] = [$viewport, 'viewport'];
+}
