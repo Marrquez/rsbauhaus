@@ -16,13 +16,16 @@
  * @see template_preprocess_views_view_list()
  */
 #}
+
+<h1>{{ view.title }}</h1>
+
 {% if attributes -%}
   <div{{ attributes }}>
 {% endif %}
   {% if title %}
     <h3>{{ title }}</h3>
   {% endif %}
-
+  <i class="arrow left"></i>
   <{{ list.type }}{{ list.attributes }}>
 
     {% for row in rows %}
@@ -32,7 +35,7 @@
     {% endfor %}
 
   </{{ list.type }}>
-
+  <i class="arrow right"></i>
 {% if attributes -%}
   </div>
 {% endif %}
